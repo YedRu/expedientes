@@ -1,0 +1,26 @@
+[
+  {
+    "code": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "registro_sanitario": "NSO-PC-AE-21.234",
+    "nro_formula": "F-01-021"
+    
+  },
+  {
+    "code": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "registro_sanitario": "NSO-PC-AE-21.235",
+    "nro_formula": "F-01-022"
+    
+  },
+  {
+    "code": "PPM00800",
+    "nombre": "JABON LIQUIDO",
+    "granel": "NEUTRO",
+    "registro_sanitario": "NSO-PC-AE-21.236",
+    "nro_formula": "F-01-023"
+    
+  }
+]

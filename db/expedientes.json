@@ -1,0 +1,412 @@
+[
+  {
+    "id": 1761575853239,
+    "codigo": "POL00600",
+    "nombre": "",
+    "granel": "",
+    "lote": "251001",
+    "created_at": "2025-10-27T14:37:33.239Z"
+  },
+  {
+    "id": 1761576297642,
+    "codigo": "POL00600",
+    "nombre": "",
+    "granel": "",
+    "lote": "251002",
+    "created_at": "2025-10-27T14:44:57.642Z"
+  },
+  {
+    "id": 1761578044218,
+    "codigo": "POL00600",
+    "nombre": "",
+    "granel": "",
+    "lote": "251003",
+    "created_at": "2025-10-27T15:14:04.218Z"
+  },
+  {
+    "id": 1761579693309,
+    "codigo": "ppm001600",
+    "nombre": "",
+    "granel": "",
+    "lote": "251004",
+    "created_at": "2025-10-27T15:41:33.309Z"
+  },
+  {
+    "id": 1761581026538,
+    "codigo": "ppp00012",
+    "nombre": "",
+    "granel": "",
+    "lote": "251005",
+    "created_at": "2025-10-27T16:03:46.538Z"
+  },
+  {
+    "id": 1761581457990,
+    "codigo": "PPM004000",
+    "nombre": "",
+    "granel": "",
+    "lote": "251006",
+    "created_at": "2025-10-27T16:10:57.990Z"
+  },
+  {
+    "id": 1761581683281,
+    "codigo": "PPM00400",
+    "nombre": "",
+    "granel": "",
+    "lote": "251007",
+    "created_at": "2025-10-27T16:14:43.281Z"
+  },
+  {
+    "id": 1761581754708,
+    "codigo": "PPM00600",
+    "nombre": "",
+    "granel": "",
+    "lote": "251008",
+    "created_at": "2025-10-27T16:15:54.708Z"
+  },
+  {
+    "id": 1761581934909,
+    "codigo": "PPM00800",
+    "nombre": "",
+    "granel": "",
+    "lote": "251009",
+    "created_at": "2025-10-27T16:18:54.909Z"
+  },
+  {
+    "id": 1761590926886,
+    "codigo": "ppm004000",
+    "nombre": "",
+    "granel": "",
+    "lote": "251010",
+    "created_at": "2025-10-27T18:48:46.886Z"
+  },
+  {
+    "id": 1761591026623,
+    "codigo": "ppm00700",
+    "nombre": "",
+    "granel": "",
+    "lote": "251011",
+    "created_at": "2025-10-27T18:50:26.623Z"
+  },
+  {
+    "id": 1761591179592,
+    "codigo": "ppm00700",
+    "nombre": "",
+    "granel": "",
+    "lote": "251012",
+    "created_at": "2025-10-27T18:52:59.592Z"
+  },
+  {
+    "id": 1761592831741,
+    "codigo": "ppm00700",
+    "nombre": "",
+    "granel": "",
+    "lote": "251013",
+    "created_at": "2025-10-27T19:20:31.741Z"
+  },
+  {
+    "id": 1761595182673,
+    "codigo": "ppm002200",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "50",
+    "lote": "251014",
+    "created_at": "2025-10-27T19:59:42.673Z"
+  },
+  {
+    "id": 1761659141758,
+    "codigo": "PPM00600",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "70",
+    "lote": "251015",
+    "created_at": "2025-10-28T13:45:41.758Z"
+  },
+  {
+    "id": 1761660724525,
+    "codigo": "PPM00600",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "80",
+    "lote": "251016",
+    "created_at": "2025-10-28T14:12:04.525Z"
+  },
+  {
+    "id": 1761664155838,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "70",
+    "lote": "251017",
+    "created_at": "2025-10-28T15:09:15.838Z"
+  },
+  {
+    "id": 1761664434890,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251018",
+    "created_at": "2025-10-28T15:13:54.890Z"
+  },
+  {
+    "id": 1761664515414,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251019",
+    "created_at": "2025-10-28T15:15:15.414Z"
+  },
+  {
+    "id": 1761664538416,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251020",
+    "created_at": "2025-10-28T15:15:38.416Z"
+  },
+  {
+    "id": 1761665603054,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251021",
+    "created_at": "2025-10-28T15:33:23.054Z"
+  },
+  {
+    "id": 1761667124434,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251022",
+    "created_at": "2025-10-28T15:58:44.434Z"
+  },
+  {
+    "id": 1761667219256,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251023",
+    "created_at": "2025-10-28T16:00:19.256Z"
+  },
+  {
+    "id": 1761667325484,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "",
+    "lote": "251024",
+    "created_at": "2025-10-28T16:02:05.484Z"
+  },
+  {
+    "id": 1761667422178,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251025",
+    "created_at": "2025-10-28T16:03:42.178Z"
+  },
+  {
+    "id": 1761667918775,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251026",
+    "created_at": "2025-10-28T16:11:58.775Z"
+  },
+  {
+    "id": 1761667965011,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251027",
+    "created_at": "2025-10-28T16:12:45.011Z"
+  },
+  {
+    "id": 1761667994641,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251028",
+    "created_at": "2025-10-28T16:13:14.641Z"
+  },
+  {
+    "id": 1761668397346,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251029",
+    "created_at": "2025-10-28T16:19:57.346Z"
+  },
+  {
+    "id": 1761668848508,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251030",
+    "created_at": "2025-10-28T16:27:28.508Z"
+  },
+  {
+    "id": 1761669976408,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251031",
+    "created_at": "2025-10-28T16:46:16.408Z"
+  },
+  {
+    "id": 1761670206390,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251032",
+    "created_at": "2025-10-28T16:50:06.390Z"
+  },
+  {
+    "id": 1761670699030,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251033",
+    "created_at": "2025-10-28T16:58:19.030Z"
+  },
+  {
+    "id": 1761670749115,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "70",
+    "lote": "251034",
+    "created_at": "2025-10-28T16:59:09.115Z"
+  },
+  {
+    "id": 1761670868856,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "70",
+    "lote": "251035",
+    "created_at": "2025-10-28T17:01:08.856Z"
+  },
+  {
+    "id": 1761676856667,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "70",
+    "lote": "251036",
+    "created_at": "2025-10-28T18:40:56.667Z"
+  },
+  {
+    "id": 1761677815141,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "55",
+    "lote": "251037",
+    "created_at": "2025-10-28T18:56:55.141Z"
+  },
+  {
+    "id": 1761678399875,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251038",
+    "created_at": "2025-10-28T19:06:39.875Z"
+  },
+  {
+    "id": 1761678723825,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251039",
+    "created_at": "2025-10-28T19:12:03.825Z"
+  },
+  {
+    "id": 1761678809701,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251040",
+    "created_at": "2025-10-28T19:13:29.701Z"
+  },
+  {
+    "id": 1761679084295,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251041",
+    "created_at": "2025-10-28T19:18:04.295Z"
+  },
+  {
+    "id": 1761679309088,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251042",
+    "created_at": "2025-10-28T19:21:49.088Z"
+  },
+  {
+    "id": 1761679319083,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251043",
+    "created_at": "2025-10-28T19:21:59.083Z"
+  },
+  {
+    "id": 1761679741544,
+    "codigo": "PPM00400",
+    "nombre": "ACONDICIONADOR",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "50",
+    "lote": "251044",
+    "created_at": "2025-10-28T19:29:01.544Z"
+  },
+  {
+    "id": 1761680754771,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "85",
+    "lote": "251045",
+    "created_at": "2025-10-28T19:45:54.771Z"
+  },
+  {
+    "id": 1761680962668,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "85",
+    "lote": "251046",
+    "created_at": "2025-10-28T19:49:22.668Z"
+  },
+  {
+    "id": 1761680972588,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "85",
+    "lote": "251047",
+    "created_at": "2025-10-28T19:49:32.588Z"
+  }
+]
