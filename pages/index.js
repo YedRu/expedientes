@@ -58,7 +58,7 @@ export default function Home() {
         subtitle: 'Procedimiento de producción',
         codigo_header: 'F-GE-PR001',
         revision: '2',
-        fecha: new Date().toLocaleDateString(),
+        fecha: '19/10/2025',
         vigencia: '27/10/2028',
         pagina: '1/2',
         cantidad_producir: cantidadEstimada || ''
