@@ -142,5 +142,95 @@
     "cantidad_estimada": "50",
     "lote": "251116",
     "created_at": "2025-11-04T20:31:32.139Z"
+  },
+  {
+    "id": 1762369185321,
+    "codigo": "PPP0200",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "50",
+    "lote": "251117",
+    "created_at": "2025-11-05T18:59:45.321Z"
+  },
+  {
+    "id": 1762369194340,
+    "codigo": "PPP0200",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "50",
+    "lote": "251118",
+    "created_at": "2025-11-05T18:59:54.340Z"
+  },
+  {
+    "id": 1762369305315,
+    "codigo": "PPP00200",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "50",
+    "lote": "251119",
+    "created_at": "2025-11-05T19:01:45.315Z"
+  },
+  {
+    "id": 1762369410464,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "1500",
+    "lote": "251120",
+    "created_at": "2025-11-05T19:03:30.464Z"
+  },
+  {
+    "id": 1762369647078,
+    "codigo": "00",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "1500",
+    "lote": "251121",
+    "created_at": "2025-11-05T19:07:27.078Z"
+  },
+  {
+    "id": 1762369649174,
+    "codigo": "00",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "1500",
+    "lote": "251122",
+    "created_at": "2025-11-05T19:07:29.174Z"
+  },
+  {
+    "id": 1762369657286,
+    "codigo": "PPM00600",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "1500",
+    "lote": "251123",
+    "created_at": "2025-11-05T19:07:37.286Z"
+  },
+  {
+    "id": 1762370464235,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "500",
+    "lote": "251124",
+    "created_at": "2025-11-05T19:21:04.235Z"
+  },
+  {
+    "id": 1762371166364,
+    "codigo": "PPM00600",
+    "nombre": "SHAMPOO",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "500",
+    "lote": "251125",
+    "created_at": "2025-11-05T19:32:46.364Z"
+  },
+  {
+    "id": 1762372821296,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "150",
+    "lote": "251126",
+    "created_at": "2025-11-05T20:00:21.296Z"
   }
 ]

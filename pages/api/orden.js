@@ -207,9 +207,12 @@ body {
 /* PRESENTACIONES */
 .tabla-presentaciones .etiqueta {
     width: 14%;
+    
+    
 }
 .tabla-presentaciones .valor {
     width: 18%;
+    height: 50px;
 }
 .presentacion-detalle {
     width: 30%;
@@ -390,33 +393,33 @@ const renderHtml = (data, logoDataUrl) => `
             <table class="tabla-general tabla-planificacion">
                 <tr>
                     <td class="etiqueta">Nº Lote:</td>
-                    <td class="valor">${data.nroLote || '0'}</td>
+                    <td class="valor">${data.lote || '0'}</td>
                     <td class="etiqueta descripcion-producto-label" colspan="2">Descripción Producto</td>
                     <td class="etiqueta status-label">Status:</td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Orden:</td>
-                    <td class="valor">${data.orden || '#N/D'}</td>
+                    <td class="valor">${'Q' + data.lote || '#N/D'}</td>
                     <td class="valor descripcion-producto-valor" colspan="2" rowspan="2">
-                        ${data.descripcionProducto || '#N/D'}
+                        ${data.granel || '#N/D'}
                     </td>
                     <td class="status-circulo" rowspan="4"></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Código Producto:</td>
-                    <td class="valor">${data.codigoProducto || '#N/D'}</td>
+                    <td class="valor">${data.codigo || '#N/D'}</td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Fecha Emisión</td>
-                    <td class="valor">${data.fechaEmision || '3/11/2025'}</td>
+                    <td class="valor">${data.fecha_emision || '#N/D'}</td>
                     <td class="etiqueta registro-sanitario-label">Registro Sanitario:</td>
                     <td class="valor registro-sanitario-valor">${data.registroSanitario || 'N/A'}</td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Cantidad a Producir (Kg):</td>
-                    <td class="valor cantidad-a-producir">${data.cantidadProducir || '#N/D'}</td>
+                    <td class="valor cantidad-a-producir">${data.cantidad_estimada || '#N/D'}</td>
                     <td class="valor nro-formula-info" colspan="2">Nro Fórmula: ${data.nroFormula || 'N/A'}</td>
-                </tr>
+                </tr>   
             </table>
         </div>
 
@@ -425,9 +428,9 @@ const renderHtml = (data, logoDataUrl) => `
             <table class="tabla-general tabla-presentaciones">
                 <tr>
                     <td class="etiqueta orden-empaque-label">Orden de Empaque 1:</td>
-                    <td class="valor orden-empaque-num">${data.ordenEmpaque1 || '0'}</td>
+                    <td class="valor orden-empaque-num">${data.lote + '- 1' || ''}</td>
                     <td class="etiqueta presentacion-label">Presentación:</td>
-                    <td class="valor presentacion-detalle">${data.presentacion1 || ''}</td>
+                    <td class="valor presentacion-detalle">${data.nombre || ''}</td>
                     <td class="etiqueta unidades-label">Unidades a Producir:</td>
                     <td class="valor unidades-num">${data.unidades1 || ''}</td>
                 </tr>

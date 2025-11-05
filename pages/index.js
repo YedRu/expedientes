@@ -18,11 +18,12 @@ export default function Home() {
       ...p,
       codigo,
       nombre: producto,
-      granel,
+      granel: granel,
       cantidad_estimada: cantidadEstimada,
       registro_sanitario: registroSanitario,
       nro_formula: nroFormula,
       comentario: comentario
+      
     }))
   }, [codigo, producto, granel, cantidadEstimada, registroSanitario, nroFormula, comentario])
 

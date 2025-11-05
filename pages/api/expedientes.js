@@ -39,7 +39,7 @@ export default async function handler(req, res) {
       granel,
       cantidad_estimada,
       lote,
-      created_at: new Date().toISOString()
+      created_at: new Date().toISOString() 
     }
     records.push(record)
     await writeDB('expedientes.json', records)
