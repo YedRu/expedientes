@@ -212,7 +212,9 @@ body {
 }
 .tabla-presentaciones .valor {
     width: 18%;
-    height: 50px;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
 }
 .presentacion-detalle {
     width: 30%;
@@ -225,59 +227,68 @@ body {
 }
 
 /* DESPEJE DE ÁREA DE PESADA */
+
 .subtitulo-despeje {
     text-align: center;
     font-style: italic;
-    font-size: 8pt;
+    font-size: 6pt;
     padding: 2px 0;
+    height: 5px;
+    border-bottom: 1px solid #000;
+    background-color: #f3f5f8ff;
 }
 
 .tabla-despeje th {
-    background-color: #f0f0f0;
     font-weight: bold;
     border: 1px solid #000;
     padding: 5px;
     text-align: center;
-    font-size: 9pt;
+    font-size: 6pt;
+    height: 5px;
 }
 
 .tabla-despeje .categoria {
-    background-color: #c9c9c9;
     font-weight: bold;
     text-align: center;
+    height: 5px;
+    font-size: 7pt;
 }
 
 .check-cell {
     text-align: center;
     width: 10%;
-    height: 18px;
+    height: 5px;
 }
 
 .check-mark {
     font-weight: bold;
-    font-size: 11pt;
+    font-size: 5pt;
+    
 }
 
 .condicion {
     text-align: left;
+    font-size: 6pt;
+    height: 2px;
 }
 
 .responsable-fila .etiqueta {
     width: 75%;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 .responsable-fila .valor {
     width: 25%;
     text-align: left;
     font-weight: bold;
+    height: 8px;
 }
 
 .observaciones-area {
     border: 1px solid #000;
     border-top: none;
-    background-color: white;
+    height: 20px;
 }
 
 .observaciones-label {
@@ -289,7 +300,7 @@ body {
 }
 
 .caja-observaciones {
-    height: 50px; 
+    height: 20px; 
     padding: 5px;
     font-size: 9pt;
 }
@@ -308,29 +319,29 @@ body {
 /* VALIDACIÓN */
 .tabla-validacion {
     margin-top: 10px;
+    height: 10px;
 }
 
 .tabla-validacion .etiqueta {
-    background-color: #f0f0f0;
+    background-color: #ffffffff;
     text-align: center;
     font-weight: bold;
-    height: 25px;
+    height: 8px;
     width: 33.33%;
 }
 
 .tabla-validacion .valor-firma {
-    height: 40px; 
-    border-bottom: 1px solid #000;
+    height: 15px; 
+    
 }
 
 .tabla-validacion .etiqueta-fecha {
     background-color: white;
     text-align: left;
     font-weight: bold;
-    padding-top: 5px;
-    border-top: none;
-    border-bottom: none;
-    padding-left: 10px;
+    padding-top: 2px;
+   
+    padding-left: 8px;
 }
 </style>
 `;
@@ -471,16 +482,17 @@ const renderHtml = (data, logoDataUrl) => `
                     <tr><td>2</td><td class="condicion">Iluminación adecuada</td><td class="check-cell">${data.c_2 ? 'X' : ''}</td><td class="check-cell">${data.i_2 ? 'X' : ''}</td></tr>
                     <tr><td>3</td><td class="condicion">Temperatura adecuada</td><td class="check-cell">${data.c_3 ? 'X' : ''}</td><td class="check-cell">${data.i_3 ? 'X' : ''}</td></tr>
                     <tr><td>4</td><td class="condicion">Ventilación adecuada</td><td class="check-cell">${data.c_4 ? 'X' : ''}</td><td class="check-cell">${data.i_4 ? 'X' : ''}</td></tr>
+                    <tr><td>5</td><td class="condicion">equipos limpios</td><td class="check-cell">${data.c_5 ? 'X' : ''}</td><td class="check-cell">${data.i_4 ? 'X' : ''}</td></tr>
                 </tbody>
                 <tbody>
                     <tr><td colspan="2" class="categoria">Personal</td><td class="categoria check-cell">Conforme</td><td class="categoria check-cell">Inconforme</td></tr>
-                    <tr><td>5</td><td class="condicion">Personal correctamente uniformado (Uniforme y Botas Seguridad)</td><td class="check-cell">${data.c_5 ? 'X' : ''}</td><td class="check-cell">${data.i_5 ? 'X' : ''}</td></tr>
-                    <tr><td>6</td><td class="condicion">Uso de mascarilla</td><td class="check-cell">${data.c_6 ? 'X' : ''}</td><td class="check-cell">${data.i_6 ? 'X' : ''}</td></tr>
-                    <tr><td>7</td><td class="condicion">Uso de tapones de seguridad</td><td class="check-cell">${data.c_7 ? 'X' : ''}</td><td class="check-cell">${data.i_7 ? 'X' : ''}</td></tr>
-                    <tr><td>8</td><td class="condicion">Lentes de seguridad</td><td class="check-cell">${data.c_8 ? 'X' : ''}</td><td class="check-cell">${data.i_8 ? 'X' : ''}</td></tr>
-                    <tr><td>9</td><td class="condicion">Guantes de nitrilo</td><td class="check-cell">${data.c_9 ? 'X' : ''}</td><td class="check-cell">${data.i_9 ? 'X' : ''}</td></tr>
-                    <tr><td>10</td><td class="condicion">Higiene personal, manos y uñas</td><td class="check-cell">${data.c_10 ? 'X' : ''}</td><td class="check-cell">${data.i_10 ? 'X' : ''}</td></tr>
-                    <tr><td>11</td><td class="condicion">Personal no utiliza ningún tipo de prendas (zarcillos, reloj, cadenas, etc)</td><td class="check-cell">${data.c_11 ? 'X' : ''}</td><td class="check-cell">${data.i_11 ? 'X' : ''}</td></tr>
+                    <tr><td>6</td><td class="condicion">Personal correctamente uniformado (Uniforme y Botas Seguridad)</td><td class="check-cell">${data.c_5 ? 'X' : ''}</td><td class="check-cell">${data.i_5 ? 'X' : ''}</td></tr>
+                    <tr><td>7</td><td class="condicion">Uso de gorros higiénicos</td><td class="check-cell">${data.c_6 ? 'X' : ''}</td><td class="check-cell">${data.i_6 ? 'X' : ''}</td></tr>
+                    <tr><td>8</td><td class="condicion">Uso de tapabocas de seguridad</td><td class="check-cell">${data.c_7 ? 'X' : ''}</td><td class="check-cell">${data.i_7 ? 'X' : ''}</td></tr>
+                    <tr><td>9</td><td class="condicion">Lentes de seguridad</td><td class="check-cell">${data.c_8 ? 'X' : ''}</td><td class="check-cell">${data.i_8 ? 'X' : ''}</td></tr>
+                    <tr><td>10</td><td class="condicion">Delantal de seguridad</td><td class="check-cell">${data.c_9 ? 'X' : ''}</td><td class="check-cell">${data.i_9 ? 'X' : ''}</td></tr>
+                    <tr><td>11</td><td class="condicion">Higiene personal, manos y uñas</td><td class="check-cell">${data.c_10 ? 'X' : ''}</td><td class="check-cell">${data.i_10 ? 'X' : ''}</td></tr>
+                    <tr><td>12</td><td class="condicion">Personal no utiliza ningún tipo de prendas (zarcillos, reloj, cadenas, etc)</td><td class="check-cell">${data.c_11 ? 'X' : ''}</td><td class="check-cell">${data.i_11 ? 'X' : ''}</td></tr>
                 </tbody>
                 <tbody>
                     <tr class="responsable-fila">
@@ -492,12 +504,11 @@ const renderHtml = (data, logoDataUrl) => `
 
             <div class="observaciones-area">
                 <p class="observaciones-label">Observaciones:</p>
-                <div class="caja-observaciones">${data.observaciones || ''}</div>
+                <div class="caja-observaciones"></div>
             </div>
             
             <div class="footer-despeje">
-                <span>${data.pieDespeje1 || '#N/D'}</span>
-                <span>${data.pieDespeje2 || '#N/D'}</span>
+               
             </div>
         </div>
 
