@@ -259,5 +259,23 @@
     "cantidad_estimada": "70",
     "lote": "251129",
     "created_at": "2025-11-10T13:26:41.465Z"
+  },
+  {
+    "id": 1762866302475,
+    "codigo": "PPP00600",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "70",
+    "lote": "251130",
+    "created_at": "2025-11-11T13:05:02.475Z"
+  },
+  {
+    "id": 1762866508331,
+    "codigo": "PPM00600",
+    "nombre": "",
+    "granel": "",
+    "cantidad_estimada": "70",
+    "lote": "251131",
+    "created_at": "2025-11-11T13:08:28.331Z"
   }
 ]

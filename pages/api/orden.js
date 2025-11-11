@@ -453,14 +453,7 @@ const renderHtml = (data, logoDataUrl) => `
                     <td class="etiqueta unidades-label">Unidades a Producir:</td>
                     <td class="valor unidades-num">${data.unidades2 || ''}</td>
                 </tr>
-                <tr>
-                    <td class="etiqueta orden-empaque-label">Orden de Empaque 3:</td>
-                    <td class="valor orden-empaque-num">${data.ordenEmpaque3 || ''}</td>
-                    <td class="etiqueta presentacion-label">Presentación:</td>
-                    <td class="valor presentacion-detalle">${data.presentacion3 || ''}</td>
-                    <td class="etiqueta unidades-label">Unidades a Producir:</td>
-                    <td class="valor unidades-num">${data.unidades3 || ''}</td>
-                </tr>
+                
             </table>
         </div>
 
