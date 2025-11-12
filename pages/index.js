@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
-import ProductionHeader from '../components/ProductionHeader'
+import { useState } from 'react'
+import styles from '../styles/InputForm.module.css'
 
 export default function Home() {
   const [codigo, setCodigo] = useState('')
@@ -7,59 +7,29 @@ export default function Home() {
   const [granel, setGranel] = useState('')
   const [lote, setLote] = useState('')
   const [cantidadEstimada, setCantidadEstimada] = useState('')
+  const [cantidadEstimadaPT, setCantidadEstimadaPT] = useState('')
   const [registroSanitario, setRegistroSanitario] = useState('')
   const [nroFormula, setNroFormula] = useState('')
-  const [comentario, setComentario] = useState('')
   const [message, setMessage] = useState('')
-  const [preview, setPreview] = useState({})
-
-  useEffect(() => {
-    setPreview(p => ({
-      ...p,
-      codigo,
-      nombre: producto,
-      granel: granel,
-      cantidad_estimada: cantidadEstimada,
-      registro_sanitario: registroSanitario,
-      nro_formula: nroFormula,
-      comentario: comentario
-      
-    }))
-  }, [codigo, producto, granel, cantidadEstimada, registroSanitario, nroFormula, comentario])
-
-  const previewRef = useRef(null)
-
-  function handlePrint() {
-    if (!previewRef.current) return
-    const content = previewRef.current.innerHTML
-    const win = window.open('', '_blank', 'noopener,noreferrer')
-    if (!win) return
-    const style = `
-      <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .preview-card { border: none; }
-      </style>`
-    win.document.open()
-    win.document.write(`<html><head><title>Imprimir Expediente</title>${style}</head><body>${content}</body></html>`)
-    win.document.close()
-    setTimeout(() => {
-      win.focus()
-      win.print()
-    }, 300)
-  }
-
   const [downloading, setDownloading] = useState(false)
 
   async function handleDownloadPDF() {
     setDownloading(true)
     try {
       const payload = {
-        ...preview, // Send all preview data to the PDF generator
+        codigo,
+        nombre: producto,
+        granel,
+        cantidad_estimada: cantidadEstimada,
+        cantidad_estimada_pt: cantidadEstimadaPT,
+        registro_sanitario: registroSanitario,
+        nro_formula: nroFormula,
+        lote,
+        fecha: new Date().toLocaleDateString(),
         titulo: 'ORDEN DE PRODUCCIÓN',
         subtitle: 'Procedimiento de producción',
         codigo_header: 'F-GE-PR001',
         revision: '2',
-        fecha: '19/10/2025',
         vigencia: '27/10/2028',
         pagina: '1/2',
         cantidad_producir: cantidadEstimada || ''
@@ -97,13 +67,11 @@ export default function Home() {
         setGranel(data.product.granel)
         setRegistroSanitario(data.product.registro_sanitario)
         setNroFormula(data.product.nro_formula)
-        setComentario(data.product.comentario)
       } else {
         setProducto('')
         setGranel('')
         setRegistroSanitario('')
         setNroFormula('')
-        setComentario('')
       }
     }
   }
@@ -121,11 +89,6 @@ export default function Home() {
       const created = await res.json()
       setLote(created.lote)
       setMessage(`Guardado. Lote: ${created.lote}`)
-      setPreview(prev => ({
-        ...prev,
-        lote: created.lote,
-        fecha: new Date(created.created_at).toLocaleDateString(),
-      }))
     } else {
       const err = await res.text()
       setMessage('Error: ' + err)
@@ -133,12 +96,12 @@ export default function Home() {
   }
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>Generar Expediente</h1>
       <div className="layout-flex">
-        <div className="form-container">
+        <div className={styles.formCard}>
           <form onSubmit={handleGenerate}>
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <label>Codigo del artículo</label>
               <input
                 value={codigo}
@@ -170,11 +133,6 @@ export default function Home() {
             </div>
 
             <div className="form-group">
-              <label>Comentario</label>
-              <input value={comentario} readOnly className="form-input" />
-            </div>
-
-            <div className="form-group">
               <label>Lote (se generará al crear)</label>
               <input value={lote} readOnly className="form-input" />
             </div>
@@ -184,23 +142,20 @@ export default function Home() {
               <input value={cantidadEstimada} onChange={(e) => setCantidadEstimada(e.target.value)} className="form-input" />
             </div>
 
-            <button type="submit" className="button">Generar y guardar</button>
+            <div className="form-group">
+              <label>Cantidad estimada de PT</label>
+              <input value={cantidadEstimadaPT} onChange={(e) => setCantidadEstimadaPT(e.target.value)} className="form-input" />
+            </div>
+
+            <div style={{ display: 'flex', gap: '10px' }}>
+                <button type="submit" className="button">Generar y guardar</button>
+                <button type="button" onClick={handleDownloadPDF} className="button-secondary" disabled={downloading || !codigo}>
+                    {downloading ? 'Generando...' : 'Guardar en PDF'}
+                </button>
+            </div>
           </form>
 
           {message && <p className="message">{message}</p>}
-        </div>
-
-        <div className="preview-area">
-          <h3>Vista previa</h3>
-          <div ref={previewRef}>
-            <ProductionHeader />
-          </div>
-          <div className="preview-actions">
-            <button onClick={handlePrint} className="button-secondary" disabled={!preview.lote && !preview.codigo}>Imprimir</button>
-            <button onClick={handleDownloadPDF} className="button-secondary" disabled={downloading || (!preview.codigo && !preview.lote)}>
-              {downloading ? 'Generando...' : 'Guardar en PDF'}
-            </button>
-          </div>
         </div>
       </div>
     </div>

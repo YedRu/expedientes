@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.formCard {
+  background-color: rgba(0, 204, 153, 0.1); /* Transparent green */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+}
+
+.formCard h2 {
+  color: #00CC99; /* Primary green color */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup input[type="date"],
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 204, 153, 0.5);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="number"]:focus,
+.formGroup input[type="date"]:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #EB2D8C; /* Pink on focus */
+  box-shadow: 0 0 5px rgba(235, 45, 140, 0.5);
+}
+
+.submitButton {
+  background-color: #00CC99; /* Primary green */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #00A37F; /* Darker green on hover */
+}
