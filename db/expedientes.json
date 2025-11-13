@@ -376,5 +376,50 @@
     "cantidad_estimada": "75",
     "lote": "251142",
     "created_at": "2025-11-12T20:41:43.204Z"
+  },
+  {
+    "id": 1762990552712,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "78",
+    "lote": "251143",
+    "created_at": "2025-11-12T23:35:52.712Z"
+  },
+  {
+    "id": 1762990889778,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "80",
+    "lote": "251144",
+    "created_at": "2025-11-12T23:41:29.778Z"
+  },
+  {
+    "id": 1762991632361,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "100",
+    "lote": "251145",
+    "created_at": "2025-11-12T23:53:52.361Z"
+  },
+  {
+    "id": 1762991781075,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "80",
+    "lote": "251146",
+    "created_at": "2025-11-12T23:56:21.075Z"
+  },
+  {
+    "id": 1762993733991,
+    "codigo": "PPM00600",
+    "nombre": "REPELENTE LOCION PIKOF ORGANICS+IR3535 GALON/3.78L",
+    "granel": "NEUTRO",
+    "cantidad_estimada": "80",
+    "lote": "251147",
+    "created_at": "2025-11-13T00:28:53.991Z"
   }
 ]

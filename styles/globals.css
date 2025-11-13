@@ -1,0 +1,200 @@
+/* Global styles for the app (imported in pages/_app.js) */
+:root {
+  --color-base: #00FF7F; /* El color que pediste */
+  --color-fondo-transparente: rgba(0, 255, 127, 0.15); /* Fondo del contenedor (15% opacidad) */
+  --color-principal-oscuro: #00994d; /* Para botones y bordes */
+  --color-texto-etiqueta: #004d26; /* Para las etiquetas (más oscuro, legible) */
+  --color-fondo-guardado: rgba(0, 255, 127, 0.3); /* Fondo del mensaje "Guardado" */
+}
+
+/* --- Estilo General --- */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f7f6; /* Un fondo gris muy claro para la página */
+  padding: 2rem;
+  margin: 0;
+}
+
+/* --- Estilos globales del formulario (convertidos desde InputForm.module.css) --- */
+.form-container {
+  background-color: var(--color-fondo-transparente);
+  border: 1px solid rgba(0, 255, 127, 0.3);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: var(--color-texto-etiqueta);
+  font-size: 0.95rem;
+}
+
+.form-row input[type="text"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-row input[readonly] {
+  background-color: #f0f0f0;
+  color: #555;
+  border-color: #ddd;
+}
+
+.form-row input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-principal-oscuro);
+  box-shadow: 0 0 0 3px rgba(0, 255, 127, 0.25);
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  grid-column: 2 / -1;
+}
+
+.btn {
+  padding: 0.7rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background-color: var(--color-principal-oscuro);
+  color: white;
+}
+.btn-primary:hover { background-color: var(--color-texto-etiqueta); transform: translateY(-2px); }
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-principal-oscuro);
+  border: 2px solid var(--color-principal-oscuro);
+}
+.btn-secondary:hover { background-color: var(--color-principal-oscuro); color: white; }
+
+.status-message {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-fondo-guardado);
+  border-left: 5px solid var(--color-principal-oscuro);
+  color: var(--color-texto-etiqueta);
+  font-weight: 500;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-message .icon { color: var(--color-principal-oscuro); font-weight: bold; }
+
+/* Compatibilidad: clases usadas en ProductionHeader.jsx ahora en global */
+.label { font-weight: 600; color: var(--color-texto-etiqueta); }
+.input-display,
+.input-editable,
+.input { width: 100%; padding: 0.45rem 0.6rem; border: 1px solid #ccc; border-radius: 6px; background-color:#fff; box-sizing:border-box; font-size:0.95rem; }
+.input-display[readonly], .input-readonly { background-color:#f0f0f0; color:#555; border-color:#ddd; }
+.input-display-center { text-align:center; }
+.input-large { min-width:220px; }
+.input-display-inline, .input-editable-inline { display:inline-block; width:auto; padding:0.35rem 0.5rem; }
+.input-bold { font-weight:700; }
+.input-display-footer { width:140px; padding:0.35rem 0.5rem; border-radius:6px; }
+.caja-observaciones { width:100%; min-height:80px; padding:0.6rem; border:1px solid #ccc; border-radius:6px; }
+
+/* Mantener selectores usados por otras partes del proyecto */
+.descripcion-producto-label {}
+.status-label {}
+.valor {}
+.descripcion-producto-valor {}
+.status-circulo {}
+.orden-empaque-label {}
+.presentacion-label {}
+.unidades-label {}
+.valor-firma {}
+.etiqueta-fecha {}
+.observaciones {}
+.footer-despeje {}
+.tabla-planificacion {}
+.tabla-presentaciones {}
+.tabla-despeje {}
+.tabla-validacion {}
+/* --- Compat classes for pages/index.js --- */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+  padding: 0 1rem;
+}
+
+.form-card {
+  background-color: rgba(0, 204, 153, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+  /* ancho por defecto en pantallas grandes */
+  width: 520px;
+}
+
+/* Layout helper: keeps the form to the left under the title on wide screens */
+.layout-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* colocar elementos a la izquierda */
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+.container h1 { text-align: left; margin-bottom: 0.5rem; }
+
+@media (max-width: 900px) {
+  .form-card { width: 100%; }
+  .layout-flex { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 480px) {
+  body { padding: 1rem; }
+  .container { padding: 0; }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label { display:block; margin-bottom:6px; font-weight:600; color:var(--color-texto-etiqueta); }
+
+.form-input { width:100%; padding:0.6rem; border-radius:6px; border:1px solid #ccc; }
+
+.button { padding:0.6rem 1rem; background:linear-gradient(90deg,var(--color-base),var(--color-principal-oscuro)); color:#fff; border:none; border-radius:12px; cursor:pointer; }
+.button-secondary { padding:0.6rem 1rem; background:transparent; border:2px solid var(--color-principal-oscuro); color:var(--color-principal-oscuro); border-radius:12px; cursor:pointer; }
+
+.message { margin-top:1rem; color:var(--color-principal-oscuro); }

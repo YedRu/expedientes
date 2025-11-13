@@ -14,7 +14,7 @@ const ProductionHeader = () => {
     };
 
     return (
-        <div className="orden-produccion">
+        <div className="form-container orden-produccion">
             <form id="ordenForm">
                 <div className="cabecera">
                     <div className="logo-y-departamento">
@@ -39,13 +39,13 @@ const ProductionHeader = () => {
                     <table className="tabla-planificacion">
                         <tbody>
                             <tr>
-                                <td className="etiqueta">Nº Lote:</td>
+                                <td className="label">Nº Lote:</td>
                                 <td className="valor"><input type="text" name="nroLote" defaultValue="0" className="input-display" readOnly /></td>
-                                <td className="etiqueta descripcion-producto-label" colSpan="2">Descripción Producto</td>
-                                <td className="etiqueta status-label">Status:</td>
+                                <td className="label descripcion-producto-label" colSpan="2">Descripción Producto</td>
+                                <td className="label status-label">Status:</td>
                             </tr>
                             <tr>
-                                <td className="etiqueta">Orden:</td>
+                                <td className="label">Orden:</td>
                                 <td className="valor"><input type="text" name="orden" defaultValue="#N/D" className="input-display" readOnly /></td>
                                 <td className="valor descripcion-producto-valor" colSpan="2" rowSpan="2">
                                     <input type="text" name="descripcionProducto" defaultValue="#N/D" className="input-display-center input-large" readOnly />
@@ -53,19 +53,19 @@ const ProductionHeader = () => {
                                 <td className="status-circulo" rowSpan="4"></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta">Código Producto:</td>
+                                <td className="label">Código Producto:</td>
                                 <td className="valor"><input type="text" name="codigoProducto" defaultValue="#N/D" className="input-display" readOnly /></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta">Fecha Emisión</td>
+                                <td className="label">Fecha Emisión</td>
                                 <td className="valor"><input type="date" name="fechaEmision" defaultValue="2025-11-03" className="input-editable" /></td>
-                                <td className="etiqueta registro-sanitario-label">Registro Sanitario:</td>
+                                <td className="label registro-sanitario-label">Registro Sanitario:</td>
                                 <td className="valor registro-sanitario-valor"><input type="text" name="registroSanitario" defaultValue="N/A" className="input-display" readOnly /></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta">Cantidad a Producir (Kg):</td>
+                                <td className="label">Cantidad a Producir (Kg):</td>
                                 <td className="valor cantidad-a-producir"><input type="number" name="cantidadProducir" defaultValue="#N/D" className="input-editable input-bold" required /></td>
-                                <td className="etiqueta nro-formula-label" colSpan="2">Nro Fórmula: <input type="text" name="nroFormula" defaultValue="N/A" className="input-display-inline" readOnly /></td>
+                                <td className="label nro-formula-label" colSpan="2">Nro Fórmula: <input type="text" name="nroFormula" defaultValue="N/A" className="input-display-inline" readOnly /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -76,27 +76,27 @@ const ProductionHeader = () => {
                     <table className="tabla-presentaciones">
                         <tbody>
                             <tr>
-                                <td className="etiqueta orden-empaque-label">Orden de Empaque 1:</td>
+                                <td className="label orden-empaque-label">Orden de Empaque 1:</td>
                                 <td className="valor orden-empaque-num"><input type="text" name="ordenEmpaque1" defaultValue="0" className="input-editable" /></td>
-                                <td className="etiqueta presentacion-label">Presentación:</td>
+                                <td className="label presentacion-label">Presentación:</td>
                                 <td className="valor presentacion-detalle"><input type="text" name="presentacion1" className="input-editable input-large" /></td>
-                                <td className="etiqueta unidades-label">Unidades a Producir:</td>
+                                <td className="label unidades-label">Unidades a Producir:</td>
                                 <td className="valor unidades-num"><input type="number" name="unidades1" className="input-editable input-bold" /></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta orden-empaque-label">Orden de Empaque 2:</td>
+                                <td className="label orden-empaque-label">Orden de Empaque 2:</td>
                                 <td className="valor orden-empaque-num"><input type="text" name="ordenEmpaque2" className="input-editable" /></td>
-                                <td className="etiqueta presentacion-label">Presentación:</td>
+                                <td className="label presentacion-label">Presentación:</td>
                                 <td className="valor presentacion-detalle"><input type="text" name="presentacion2" className="input-editable input-large" /></td>
-                                <td className="etiqueta unidades-label">Unidades a Producir:</td>
+                                <td className="label unidades-label">Unidades a Producir:</td>
                                 <td className="valor unidades-num"><input type="number" name="unidades2" className="input-editable input-bold" /></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta orden-empaque-label">Orden de Empaque 3:</td>
+                                <td className="label orden-empaque-label">Orden de Empaque 3:</td>
                                 <td className="valor orden-empaque-num"><input type="text" name="ordenEmpaque3" className="input-editable" /></td>
-                                <td className="etiqueta presentacion-label">Presentación:</td>
+                                <td className="label presentacion-label">Presentación:</td>
                                 <td className="valor presentacion-detalle"><input type="text" name="presentacion3" className="input-editable input-large" /></td>
-                                <td className="etiqueta unidades-label">Unidades a Producir:</td>
+                                <td className="label unidades-label">Unidades a Producir:</td>
                                 <td className="valor unidades-num"><input type="number" name="unidades3" className="input-editable input-bold" /></td>
                             </tr>
                         </tbody>
@@ -134,14 +134,14 @@ const ProductionHeader = () => {
                         </tbody>
                         <tbody>
                             <tr className="responsable-fila">
-                                <td colSpan="2" className="etiqueta">Responsable: <input type="text" name="responsable" className="input-editable-inline" /></td>
+                                <td colSpan="2" className="label">Responsable: <input type="text" name="responsable" className="input-editable-inline" /></td>
                                 <td colSpan="2" className="valor">Fecha: <input type="date" name="fechaResponsable" className="input-editable-inline" /></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div className="observaciones">
-                        <p className="etiqueta">Observaciones:</p>
+                        <p className="label">Observaciones:</p>
                         <textarea name="observaciones" className="caja-observaciones"></textarea>
                     </div>
 
@@ -153,9 +153,9 @@ const ProductionHeader = () => {
                     <table className="tabla-validacion">
                         <tbody>
                             <tr>
-                                <td className="etiqueta">Producción</td>
-                                <td className="etiqueta">Control de Calidad</td>
-                                <td className="etiqueta">Director Técnico</td>
+                                <td className="label">Producción</td>
+                                <td className="label">Control de Calidad</td>
+                                <td className="label">Director Técnico</td>
                             </tr>
                             <tr>
                                 <td className="valor-firma"></td>
@@ -163,15 +163,15 @@ const ProductionHeader = () => {
                                 <td className="valor-firma"></td>
                             </tr>
                             <tr>
-                                <td className="etiqueta-fecha">Fecha: <input type="date" name="fechaProduccion" className="input-editable-inline" /></td>
-                                <td className="etiqueta-fecha">Fecha: <input type="date" name="fechaControlCalidad" className="input-editable-inline" /></td>
-                                <td className="etiqueta-fecha">Fecha: <input type="date" name="fechaDirectorTecnico" className="input-editable-inline" /></td>
+                                <td className="label etiqueta-fecha">Fecha: <input type="date" name="fechaProduccion" className="input-editable-inline" /></td>
+                                <td className="label etiqueta-fecha">Fecha: <input type="date" name="fechaControlCalidad" className="input-editable-inline" /></td>
+                                <td className="label etiqueta-fecha">Fecha: <input type="date" name="fechaDirectorTecnico" className="input-editable-inline" /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <button type="submit" className="boton-guardar">Guardar Orden</button>
+                <button type="submit" className="btn-primary">Guardar Orden</button>
             </form>
         </div>
     );

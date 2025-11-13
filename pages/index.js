@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styles from '../styles/InputForm.module.css'
 
 export default function Home() {
   const [codigo, setCodigo] = useState('')
@@ -96,12 +95,12 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <h1>Generar Expediente</h1>
       <div className="layout-flex">
-        <div className={styles.formCard}>
+        <div className="form-card">
           <form onSubmit={handleGenerate}>
-            <div className={styles.formGroup}>
+            <div className="form-group">
               <label>Codigo del artículo</label>
               <input
                 value={codigo}
