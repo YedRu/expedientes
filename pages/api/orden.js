@@ -422,11 +422,11 @@ const renderHtml = (data, logoDataUrl) => `
                 </td>
 
                 <td class="section info-area">
-                    <div class="info-row">Código: ${data.codigo_header || 'F-QE-PR-001'}</div>
-                    <div class="info-row">Revisión: ${data.revision || '1'}</div>
-                    <div class="info-row">Fecha de emisión: ${data.fecha_emision || '19/10/2021'}</div>
-                    <div class="info-row">Vigencia hasta: ${data.vigencia || '19/10/2024'}</div>
-                    <div class="info-row page-number">Página: ${data.pagina || '1/2'}</div>
+                    <div class="info-row">Código: F-EM-PR001</div>
+                    <div class="info-row">Revisión: 2 </div>
+                    <div class="info-row">Fecha de emisión: 18/11/2025 </div>
+                    <div class="info-row">Vigencia hasta: 18/11/2028 </div>
+                    <div class="info-row page-number">Página: 1/2 </div>
                 </td>
             </tr>
             
@@ -449,7 +449,7 @@ const renderHtml = (data, logoDataUrl) => `
             <table class="tabla-general tabla-planificacion">
                 <tr>
                     <td class="etiqueta">Nº Lote:</td>
-                    <td class="valor">${data.lote || '0'}</td>
+                    <td class="valor">${data.lote || ''}</td>
                     <td class="etiqueta descripcion-producto-label" colspan="2">Descripción Producto</td>
                     <td class="etiqueta status-label">Status:</td>
                 </tr>
@@ -564,9 +564,9 @@ const renderHtml = (data, logoDataUrl) => `
                     <td class="valor-firma"></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta-fecha">Fecha: ${data.fechaProduccion || ''}</td>
-                    <td class="etiqueta-fecha">Fecha: ${data.fechaControlCalidad || ''}</td>
-                    <td class="etiqueta-fecha">Fecha: ${data.fechaDirectorTecnico || ''}</td>
+                    <td class="etiqueta-fecha">Fecha:  </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
                 </tr>
             </table>
         </div>

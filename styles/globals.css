@@ -49,7 +49,7 @@ body {
   width: 100%;
   padding: 0.6rem 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   background-color: #ffffff;
   font-size: 1rem;
   box-sizing: border-box;
@@ -80,7 +80,7 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -119,14 +119,14 @@ body {
 .label { font-weight: 600; color: var(--color-texto-etiqueta); }
 .input-display,
 .input-editable,
-.input { width: 100%; padding: 0.45rem 0.6rem; border: 1px solid #ccc; border-radius: 6px; background-color:#fff; box-sizing:border-box; font-size:0.95rem; }
+.input { width: 100%; padding: 0.45rem 0.6rem; border: 1px solid #ccc; border-radius: 12px; background-color:#fff; box-sizing:border-box; font-size:0.95rem; }
 .input-display[readonly], .input-readonly { background-color:#f0f0f0; color:#555; border-color:#ddd; }
 .input-display-center { text-align:center; }
 .input-large { min-width:220px; }
 .input-display-inline, .input-editable-inline { display:inline-block; width:auto; padding:0.35rem 0.5rem; }
 .input-bold { font-weight:700; }
-.input-display-footer { width:140px; padding:0.35rem 0.5rem; border-radius:6px; }
-.caja-observaciones { width:100%; min-height:80px; padding:0.6rem; border:1px solid #ccc; border-radius:6px; }
+.input-display-footer { width:140px; padding:0.35rem 0.5rem; border-radius:12px; }
+.caja-observaciones { width:100%; min-height:80px; padding:0.6rem; border:1px solid #ccc; border-radius:12px; }
 
 /* Mantener selectores usados por otras partes del proyecto */
 .descripcion-producto-label {}
@@ -192,7 +192,7 @@ body {
 
 .form-group label { display:block; margin-bottom:6px; font-weight:600; color:var(--color-texto-etiqueta); }
 
-.form-input { width:100%; padding:0.6rem; border-radius:6px; border:1px solid #ccc; }
+.form-input { width:100%; padding:0.6rem; border-radius:12px; border:1px solid #ccc; }
 
 .button { padding:0.6rem 1rem; background:linear-gradient(90deg,var(--color-base),var(--color-principal-oscuro)); color:#fff; border:none; border-radius:12px; cursor:pointer; }
 .button-secondary { padding:0.6rem 1rem; background:transparent; border:2px solid var(--color-principal-oscuro); color:var(--color-principal-oscuro); border-radius:12px; cursor:pointer; }

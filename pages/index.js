@@ -64,7 +64,7 @@ export default function Home() {
       const payload = {
         lote,
         orden: lote,
-        descripcion_producto: granel,
+        nombre: producto,
         fecha_empaque_est: fechaEmpaqueEst,
         codigo_producto: codigo,
         fecha_vencimiento: fechaVencimiento,
