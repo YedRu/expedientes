@@ -9,6 +9,8 @@ export default function Home() {
   const [cantidadEstimadaPT, setCantidadEstimadaPT] = useState('')
   const [registroSanitario, setRegistroSanitario] = useState('')
   const [nroFormula, setNroFormula] = useState('')
+  const [fechaEmpaqueEst, setFechaEmpaqueEst] = useState('')
+  const [fechaVencimiento, setFechaVencimiento] = useState('')
   const [message, setMessage] = useState('')
   const [downloading, setDownloading] = useState(false)
 
@@ -51,6 +53,42 @@ export default function Home() {
     } catch (err) {
       console.error(err)
       setMessage('Error al generar PDF: ' + (err.message || err))
+    } finally {
+      setDownloading(false)
+    }
+  }
+
+  async function handleDownloadEmpaquePDF() {
+    setDownloading(true)
+    try {
+      const payload = {
+        lote,
+        orden: lote,
+        descripcion_producto: granel,
+        fecha_empaque_est: fechaEmpaqueEst,
+        codigo_producto: codigo,
+        fecha_vencimiento: fechaVencimiento,
+        registro_sanitario: registroSanitario,
+        unidades_a_envasar: cantidadEstimadaPT,
+      }
+
+      const res = await fetch('/api/empaque1', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+
+      if (!res.ok) {
+        const text = await res.text()
+        throw new Error(text || 'PDF generation failed')
+      }
+
+      const blob = await res.blob()
+      const url = window.URL.createObjectURL(blob)
+      window.open(url, '_blank')
+    } catch (err) {
+      console.error(err)
+      setMessage('Error al generar PDF de empaque: ' + (err.message || err))
     } finally {
       setDownloading(false)
     }
@@ -146,10 +184,23 @@ export default function Home() {
               <input value={cantidadEstimadaPT} onChange={(e) => setCantidadEstimadaPT(e.target.value)} className="form-input" />
             </div>
 
+            <div className="form-group">
+              <label>Fecha Empaque Estimada</label>
+              <input type="date" value={fechaEmpaqueEst} onChange={(e) => setFechaEmpaqueEst(e.target.value)} className="form-input" />
+            </div>
+
+            <div className="form-group">
+              <label>Fecha Vencimiento</label>
+              <input type="date" value={fechaVencimiento} onChange={(e) => setFechaVencimiento(e.target.value)} className="form-input" />
+            </div>
+
             <div style={{ display: 'flex', gap: '10px' }}>
                 <button type="submit" className="button">Generar y guardar</button>
                 <button type="button" onClick={handleDownloadPDF} className="button-secondary" disabled={downloading || !codigo}>
-                    {downloading ? 'Generando...' : 'Guardar en PDF'}
+                    {downloading ? 'Generando...' : 'Guardar Orden en PDF'}
+                </button>
+                <button type="button" onClick={handleDownloadEmpaquePDF} className="button-secondary" disabled={downloading || !codigo}>
+                    {downloading ? 'Generando...' : 'Guardar Empaque en PDF'}
                 </button>
             </div>
           </form>
