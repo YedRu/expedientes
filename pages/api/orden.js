@@ -595,11 +595,24 @@ async function getPuppeteer() {
 }
 
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        res.setHeader('Allow', 'POST');
+    if (req.method !== 'GET') {
+        res.setHeader('Allow', 'GET');
         res.status(405).end('Method Not Allowed');
         return;
     }
+
+    const { lote } = req.query;
+    if (!lote) {
+        return res.status(400).json({ error: 'El parámetro "lote" es requerido.' });
+    }
+
+    // Simulación de búsqueda de datos en la base de datos usando el lote
+    // En una aplicación real, aquí harías una consulta a tu base de datos.
+    const expedienteRes = await fetch(`http://${req.headers.host}/api/expedientes?lote=${lote}`);
+    if (!expedienteRes.ok) {
+        return res.status(404).json({ error: `No se encontró el expediente para el lote ${lote}` });
+    }
+    const data = await expedienteRes.json();
 
     const puppeteerModule = await getPuppeteer();
     if (!puppeteerModule) {
@@ -627,7 +640,6 @@ export default async function handler(req, res) {
             // Logo not found, proceed without it
         }
 
-        const data = req.body || {};
         const today = new Date();
         data.fecha_emision = today.toLocaleDateString('es-ES', {
             day: '2-digit',

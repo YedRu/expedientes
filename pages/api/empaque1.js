@@ -622,11 +622,7 @@ const renderHtml = (data, logoDataUrl) => `
                     <td style="width: 16%;"><span class="label">Nº Lote:</span><span class="data">${data.lote}</span></td>
                     <td style="width: 16%;"><span class="label">Orden:</span><span class="data">${data.orden + '-1'}</span></td>
                     <td colspan="2" rowspan="3" class="data-large" style="width: 43%;">
-                        <div style="border: 1px solid #000; border-radius: 8px; padding: 4px; margin-top: 2px; min-height: 40px;">
-                            <span class="label">Descripción Producto</span>
-                            <br>
-                            ${data.nombre}
-                        </div>
+                        <span class="label">Descripción Producto</span><br>${data.nombre}
                     </td>
                     <td style="width: 25%;"><span class="label">Fecha Empaque Est:</span><span class="data">${data.fecha_empaque_est }</span></td>
                 </tr>
@@ -822,11 +818,23 @@ const renderHtml = (data, logoDataUrl) => `
 `;
 
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        res.setHeader('Allow', 'POST');
+    if (req.method !== 'GET') {
+        res.setHeader('Allow', 'GET');
         res.status(405).end('Method Not Allowed');
         return;
     }
+
+    const { lote } = req.query;
+    if (!lote) {
+        return res.status(400).json({ error: 'El parámetro "lote" es requerido.' });
+    }
+
+    // Simulación de búsqueda de datos en la base de datos usando el lote
+    const expedienteRes = await fetch(`http://${req.headers.host}/api/expedientes?lote=${lote}`);
+    if (!expedienteRes.ok) {
+        return res.status(404).json({ error: `No se encontró el expediente para el lote ${lote}` });
+    }
+    const data = await expedienteRes.json();
 
     const puppeteerModule = await getPuppeteer();
     if (!puppeteerModule) {
@@ -853,8 +861,6 @@ export default async function handler(req, res) {
         } catch (e) {
             // Logo not found, proceed without it
         }
-
-        const data = req.body || {};
 
         if (data.fecha_empaque_est && data.fecha_empaque_est.includes('-')) {
             const dateParts = data.fecha_empaque_est.split('-');
