@@ -39,6 +39,18 @@ const getStyles = () => `
         vertical-align: top;
         height: 1.2em;
     }
+    .tabla-general {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .tabla-general td {
+        border: 1px solid #000;
+        padding: 5px;
+        vertical-align: middle;
+        height: 18px; 
+        box-sizing: border-box;
+        font-size: 9pt;
+    }
     .control-peso-table th, .control-peso-table td {
         padding-top: 1px;
         padding-bottom: 1px;
@@ -47,9 +59,19 @@ const getStyles = () => `
         background-color: #d9d9d9;
         font-weight: bold;
         text-align: center;
-        padding: 2px;
-        border-top: 1px solid #000;
-        border-radius: 12px;
+        padding: 0 2px;
+        border: 1px solid #000;
+        height: 12px;
+        line-height: 12px; /* Vertically center the text */
+    }
+    .boxed-title-group {
+        border: 1px solid #000;
+    }
+    .boxed-title-group .section-title {
+        border: none;
+    }
+    .boxed-title-group .section-title:first-child {
+        border-bottom: 1px solid #000;
     }
     .label {
         font-weight: bold;
@@ -184,34 +206,85 @@ const getStyles = () => `
 
     /* 6. Muestra Unitaria */
     .muestra-table td {
-        height: 25px;
-        text-align: left;
-        padding-left: 20px;
+        padding: 0; /* Remove padding from cell to allow inner divs to fill it */
+        vertical-align: top;
     }
-    .muestra-table .label {
-        font-size: 8pt;
-        text-align: left;
+    .muestra-cell-container {
+        display: flex;
+        height: 22px; /* Set height on container */
+    }
+    .muestra-number-box {
+        width: 25px; /* Fixed width for the number box */
+        border-right: 1px solid #000; /* Border to create the "recuadro" */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 9pt;
+    }
+    .muestra-value-box {
+        flex-grow: 1; /* The rest of the space is for the value */
     }
 
     /* 7 & 8. Resumen y Responsables */
-    .summary-table td {
-        height: 30px;
+    .summary-table .summary-labels td {
+        background-color: #f2f2f2; /* Fondo gris claro */
+        font-weight: bold;
+        font-size: 8pt;
+        text-align: center;
+        padding: 4px;
     }
-    .responsible-table td {
-        height: 40px;
+    .summary-table .summary-values td {
+        height: 25px; /* Espacio para rellenar */
+    }
+    .responsible-table .responsible-label {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        font-size: 8pt;
+        text-align: center;
+        padding: 4px;
+    }
+    .responsible-table .responsible-signature {
+        height: 10px; /* Halved height for signature */
+    }
+    .responsible-table .responsible-date {
+        font-weight: bold;
+        font-size: 8pt;
+        text-align: left;
+        padding: 4px;
         vertical-align: bottom;
-        font-size: 7.5pt;
     }
 
-    /* 9. Validación */
-    .validation-table .label {
-        text-align: left;
-        font-size: 8pt;
+    /* --- VALIDACIÓN --- */
+    .tabla-validacion {
+        margin-top: 10px;
     }
-    .validation-table td {
-        height: 45px;
-        vertical-align: bottom;
+
+    .tabla-validacion .etiqueta {
+      
+        text-align: center;
+        font-weight: bold;
+        width: 33.33%;
+    }
+
+    .etiqueta {
+        background-color: #f0f0f0; 
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        width: 16%; /* Ancho ajustado para etiquetas */
+    }
+
+    .tabla-validacion .valor-firma {
+        height: 22px;
+    }
+
+    .tabla-validacion .etiqueta-fecha {
         text-align: left;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-left: 8px;
+        height: auto;
     }
     @media print {
         .page-break {
@@ -541,25 +614,26 @@ const renderHtml2 = (data, logoDataUrl) => `
         </tbody>
     </table>
 
-    <div class="page2-section-title-bar green-bg">VALIDACIÓN</div>
-    <table class="page2-table validation-table">
-        <tr>
-            <td class="signature-label">Líder de Producción</td>
-            <td class="signature-line"></td>
-            <td class="signature-label">Líder de Empaque</td>
-            <td class="signature-line"></td>
-            <td class="signature-label">Control de Calidad</td>
-            <td class="signature-line"></td>
-        </tr>
-        <tr>
-            <td class="signature-label-small">Fecha:</td>
-            <td class="signature-line-small"></td>
-            <td class="signature-label-small">Fecha:</td>
-            <td class="signature-line-small"></td>
-            <td class="signature-label-small">Fecha:</td>
-            <td class="signature-line-small"></td>
-        </tr>
-    </table>
+    <div class="section-body">
+            <div class="section-title">VALIDACIÓN</div>
+            <table class="tabla-general tabla-validacion">
+                <tr>
+                    <td class="etiqueta">Producción</td>
+                    <td class="etiqueta">Control de Calidad</td>
+                    <td class="etiqueta">Director Técnico</td>
+                </tr>
+                <tr>
+                    <td class="valor-firma"></td>
+                    <td class="valor-firma"></td>
+                    <td class="valor-firma"></td>
+                </tr>
+                <tr>
+                    <td class="etiqueta-fecha">Fecha:  </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
+                </tr>
+            </table>
+        </div>
 </div>
 `;
 
@@ -613,8 +687,10 @@ const renderHtml = (data, logoDataUrl) => `
             </tbody>
         </table>
 
-        <div class="section-title no-border-top">PRODUCTO TERMINADO</div>
-        <div class="section-title no-border-top">ORDEN DE PLANIFICACIÓN</div>
+        <div class="boxed-title-group">
+            <div class="section-title">PRODUCTO TERMINADO</div>
+            <div class="section-title">ORDEN DE PLANIFICACIÓN</div>
+        </div>
         
         <table class="main-table planificacion-table no-border-top">
             <tbody>
@@ -716,7 +792,7 @@ const renderHtml = (data, logoDataUrl) => `
         <div class="section-title">PESO DE ENVASES</div>
         <table class="main-table no-border-top">
             <tr>
-                <td style="width: 6.66%; height: 22px;"></td>
+                <td style="width: 6.66%; height: 20px;"></td>
                 <td style="width: 6.66%;"></td>
                 <td style="width: 6.66%;"></td>
                 <td style="width: 6.66%;"></td>
@@ -744,40 +820,70 @@ const renderHtml = (data, logoDataUrl) => `
         <table class="main-table muestra-table no-border-top">
             <tbody>
                 <tr>
-                    <td style="width: 20%;"><span class="label">1</span></td>
-                    <td style="width: 20%;"><span class="label">2</span></td>
-                    <td style="width: 20%;"><span class="label">3</span></td>
-                    <td style="width: 20%;"><span class="label">4</span></td>
-                    <td style="width: 20%;"><span class="label">5</span></td>
+                    <td style="width: 20%;"><div class="muestra-cell-container"><div class="muestra-number-box">1</div><div class="muestra-value-box"></div></div></td>
+                    <td style="width: 20%;"><div class="muestra-cell-container"><div class="muestra-number-box">2</div><div class="muestra-value-box"></div></div></td>
+                    <td style="width: 20%;"><div class="muestra-cell-container"><div class="muestra-number-box">3</div><div class="muestra-value-box"></div></div></td>
+                    <td style="width: 20%;"><div class="muestra-cell-container"><div class="muestra-number-box">4</div><div class="muestra-value-box"></div></div></td>
+                    <td style="width: 20%;"><div class="muestra-cell-container"><div class="muestra-number-box">5</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">6</span></td> <td><span class="label">7</span></td> <td><span class="label">8</span></td> <td><span class="label">9</span></td> <td><span class="label">10</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">6</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">7</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">8</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">9</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">10</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">11</span></td> <td><span class="label">12</span></td> <td><span class="label">13</span></td> <td><span class="label">14</span></td> <td><span class="label">15</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">11</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">12</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">13</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">14</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">15</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">16</span></td> <td><span class="label">17</span></td> <td><span class="label">18</span></td> <td><span class="label">19</span></td> <td><span class="label">20</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">16</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">17</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">18</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">19</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">20</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">21</span></td> <td><span class="label">22</span></td> <td><span class="label">23</span></td> <td><span class="label">24</span></td> <td><span class="label">25</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">21</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">22</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">23</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">24</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">25</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">26</span></td> <td><span class="label">27</span></td> <td><span class="label">28</span></td> <td><span class="label">29</span></td> <td><span class="label">30</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">26</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">27</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">28</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">29</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">30</div><div class="muestra-value-box"></div></div></td>
                 </tr>
                 <tr>
-                    <td><span class="label">31</span></td> <td><span class="label">32</span></td> <td><span class="label">33</span></td> <td><span class="label">34</span></td> <td><span class="label">35</span></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">31</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">32</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">33</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">34</div><div class="muestra-value-box"></div></div></td>
+                    <td><div class="muestra-cell-container"><div class="muestra-number-box">35</div><div class="muestra-value-box"></div></div></td>
                 </tr>
             </tbody>
         </table>
 
         <table class="main-table summary-table">
             <tbody>
-                <tr>
-                    <td style="width: 25%;"><span class="label">Peso Promedio Contenido Neto:</span><br></td>
-                    <td style="width: 25%;"><span class="label">Peso Promedio Contenido Bruto:</span><br></td>
-                    <td style="width: 25%;"><span class="label">Desviación Estándar Contenido Neto:</span><br></td>
-                    <td style="width: 25%;"><span class="label">Desviación Estándar Contenido Bruto:</span><br></td>
+                <tr class="summary-labels">
+                    <td style="width: 25%;">Peso Promedio Contenido Neto:</td>
+                    <td style="width: 25%;">Peso Promedio Contenido Bruto:</td>
+                    <td style="width: 25%;">Desviación Estándar Contenido Neto:</td>
+                    <td style="width: 25%;">Desviación Estándar Contenido Bruto:</td>
+                </tr>
+                <tr class="summary-values">
+                    <td style="height: 18px;"></td>
+                    <td style="height: 18px;"></td>
+                    <td style="height: 18px;"></td>
+                    <td style="height: 18px;"></td>
                 </tr>
             </tbody>
         </table>
@@ -785,31 +891,40 @@ const renderHtml = (data, logoDataUrl) => `
         <table class="main-table responsible-table no-border-top">
             <tbody>
                 <tr>
-                    <td style="width: 50%;"><span class="label">Responsable Control Peso</span><br><br><span class="label">Fecha:</span></td>
-                    <td style="width: 50%;"><span class="label">Responsable Control de Calidad </span><br><br><span class="label">Fecha:</span></td>
+                    <td class="responsible-label" style="width: 50%;">Responsable Control Peso</td>
+                    <td class="responsible-label" style="width: 50%;">Responsable Control de Calidad</td>
+                </tr>
+                <tr>
+                    <td class="responsible-signature" style="height: 20px;"></td>
+                    <td class="responsible-signature" style="height: 20px;"></td>
+                </tr>
+                <tr>
+                    <td class="responsible-date">Fecha:</td>
+                    <td class="responsible-date">Fecha:</td>
                 </tr>
             </tbody>
         </table>
         
-        <div class="section-title">VALIDACIÓN</div>
-        <table class="main-table validation-table no-border-top">
-            <tbody>
+        <div class="section-body">
+            <div class="section-title">VALIDACIÓN</div>
+            <table class="tabla-general tabla-validacion">
                 <tr>
-                    <td style="width: 33.3%;">
-                        <span class="label">Lider de Producción</span><br><br>
-                        <span class="label">Fecha:</span>
-                    </td>
-                    <td style="width: 33.3%;">
-                        <span class="label">Jefe de Producción</span><br><br>
-                        <span class="label">Fecha:</span>
-                    </td>
-                    <td style="width: 33.3%;">
-                        <span class="label">Control de Calidad</span><br><br>
-                        <span class="label">Fecha:</span>
-                    </td>
+                    <td class="etiqueta">Producción</td>
+                    <td class="etiqueta">Control de Calidad</td>
+                    <td class="etiqueta">Director Técnico</td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="valor-firma"></td>
+                    <td class="valor-firma"></td>
+                    <td class="valor-firma"></td>
+                </tr>
+                <tr>
+                    <td class="etiqueta-fecha">Fecha:  </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
+                    <td class="etiqueta-fecha">Fecha: </td>
+                </tr>
+            </table>
+        </div>
 
     </div>
     ${renderHtml2(data, logoDataUrl)}

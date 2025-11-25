@@ -251,6 +251,28 @@
         </table>
     </div>
 
-   
+    <script>
+        function validarFirmas() {
+            const firmaProduccion = document.querySelector('.validation-table .signature-line:nth-of-type(1)').textContent.trim();
+            const firmaEmpaque = document.querySelector('.validation-table .signature-line:nth-of-type(2)').textContent.trim();
+            const firmaCalidad = document.querySelector('.validation-table .signature-line:nth-of-type(3)').textContent.trim();
+
+            if (!firmaProduccion || !firmaEmpaque || !firmaCalidad) {
+                alert('Validación incompleta. Todas las firmas son requeridas.');
+                return false;
+            }
+
+            console.log('¡Validación de firmas exitosa!');
+            return true;
+        }
+
+        // Ejemplo de cómo podrías usar la validación antes de generar un PDF
+        // document.getElementById('boton-generar-pdf').addEventListener('click', function () {
+        //     if (validarFirmas()) {
+        //         const elemento = document.getElementById('documento');
+        //         html2pdf().from(elemento).save('orden-de-empaque.pdf');
+        //     }
+        // });
+    </script>
 </body>
 </html>
