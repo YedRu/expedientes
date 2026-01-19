@@ -1,4 +1,7 @@
+
 import { readDB, writeDB } from '../../lib/db'
+import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
 
 function currentYYMM() {
   const d = new Date()
@@ -21,8 +24,18 @@ function nextSuffixForPrefix(records, prefix) {
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     const all = await readDB('expedientes.json')
-    res.status(200).json(all)
-    return
+    const { lote } = req.query;
+    if (lote) {
+      const record = all.find(r => r.lote === lote);
+      if (record) {
+        res.status(200).json(record);
+      } else {
+        res.status(404).json({ error: `No se encontró el expediente para el lote ${lote}` });
+      }
+    } else {
+      res.status(200).json(all);
+    }
+    return;
   }
 
   if (req.method === 'POST') {
@@ -50,3 +63,15 @@ export default async function handler(req, res) {
   res.setHeader('Allow', 'GET, POST')
   res.status(405).end('Method Not Allowed')
 }
+
+export const generarPdf = async (req, res) => {
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  });
+  
+  const page = await browser.newPage();
+  // ... tu lógica ...
+};
