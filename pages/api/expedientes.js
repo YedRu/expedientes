@@ -63,15 +63,3 @@ export default async function handler(req, res) {
   res.setHeader('Allow', 'GET, POST')
   res.status(405).end('Method Not Allowed')
 }
-
-export const generarPdf = async (req, res) => {
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
-  });
-  
-  const page = await browser.newPage();
-  // ... tu lógica ...
-};

@@ -4,4 +4,4 @@ services:
     env: node
     plan: free
     buildCommand: npm install && npm run build
-    startCommand: npm run start
+    startCommand: eval $(dbus-launch --sh-syntax); npm run start
